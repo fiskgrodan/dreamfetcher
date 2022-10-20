@@ -1,7 +1,10 @@
 <script>
   import Endpoint from "./Endpoint.svelte";
-  import Body from "./Body.svelte";
   import Tab from "../../components/Tab.svelte";
+  import Textarea from "../../components/Textarea.svelte";
+  import { body } from "../../state/body";
+  import { headers } from "../../state/headers";
+  import { jwt } from "../../state/jwt";
 
   let current = "body";
 </script>
@@ -18,13 +21,13 @@
     <Tab active={current === "jwt"} on:click={() => (current = "jwt")}>jwt</Tab>
   </div>
   {#if current === "body"}
-    <Body />
+    <Textarea store={body} />
   {/if}
   {#if current === "headers"}
-    <div>Headers</div>
+    <Textarea store={headers} />
   {/if}
   {#if current === "jwt"}
-    <div>JWT</div>
+    <Textarea store={jwt} />
   {/if}
 </section>
 
@@ -38,6 +41,6 @@
     display: flex;
     gap: 10px;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
   }
 </style>

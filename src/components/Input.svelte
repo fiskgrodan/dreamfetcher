@@ -1,7 +1,8 @@
 <script>
+  export let value = "";
 </script>
 
-<input />
+<input bind:value />
 
 <style>
   input {
