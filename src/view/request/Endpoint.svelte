@@ -2,12 +2,12 @@
   import Dropdown from "./method/Dropdown.svelte";
   import Input from "../../components/Input.svelte";
   import Button from "../../components/Button.svelte";
-  import { endpoint } from "../../state/request";
+  import { endpoint, send } from "../../state/request";
 </script>
 
 <div>
   <Input bind:value={$endpoint} />
-  <Button>Send</Button>
+  <Button on:click={send}>Send</Button>
   <Dropdown />
 </div>
 

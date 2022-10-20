@@ -33,7 +33,7 @@
   .wrapper {
     display: flex;
     align-items: center;
-    min-width: 50px;
+    min-width: 100px;
   }
 
   .button {
@@ -44,6 +44,7 @@
   .dropdown {
     position: absolute;
     top: 70px;
+    background-color: black;
     border: 1px solid #666;
     padding: 10px 20px;
     border-radius: 5px;
