@@ -2,9 +2,7 @@
   import Endpoint from "./Endpoint.svelte";
   import Tab from "../../components/Tab.svelte";
   import Textarea from "../../components/Textarea.svelte";
-  import { body } from "../../state/body";
-  import { headers } from "../../state/headers";
-  import { jwt } from "../../state/jwt";
+  import { body, headers, jwt } from "../../state/request";
 
   let current = "body";
 </script>

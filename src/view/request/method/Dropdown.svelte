@@ -1,6 +1,6 @@
 <script>
   import { fade } from "svelte/transition";
-  import { options, method } from "../../../state/method";
+  import { options, method } from "../../../state/request";
 
   let open = false;
 
