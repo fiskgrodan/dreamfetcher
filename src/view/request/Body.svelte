@@ -24,12 +24,6 @@
   textarea {
     width: 100%;
     min-height: 100vh;
-    border: none;
-    outline: none;
-    resize: none;
-    color: inherit;
-    background-color: inherit;
     font-size: 18px;
-    font-family: monospace;
   }
 </style>
