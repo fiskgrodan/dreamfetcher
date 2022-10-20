@@ -1,5 +1,5 @@
 import { writable, get } from "svelte/store";
-import { response } from "./response";
+import { response, data } from "./response";
 
 export const endpoint = writable("https://www.boredapi.com/api/activity");
 
@@ -25,5 +25,8 @@ export const send = async () => {
     body: getBody(),
   });
 
+  const json = await fetchResponse.json();
+
   response.set(fetchResponse);
+  data.set(json);
 };

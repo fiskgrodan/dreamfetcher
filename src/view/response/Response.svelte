@@ -1,6 +1,8 @@
 <script>
   import Header from "./Header.svelte";
   import Tab from "../../components/Tab.svelte";
+  import Body from "./Body.svelte";
+  import Headers from "./Headers.svelte";
   import { fade } from "svelte/transition";
   import { response } from "../../state/response";
 
@@ -18,6 +20,8 @@
         >body</Tab
       >
     </div>
+    {#if current === "headers"}<Headers />{/if}
+    {#if current === "body"}<Body />{/if}
   </section>
 {/if}
 
