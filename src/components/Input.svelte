@@ -2,10 +2,11 @@
   export let value = "";
 </script>
 
-<input bind:value />
+<input spellcheck="false" autocorrect="off" autocapitalize="off" bind:value />
 
 <style>
   input {
+    font-family: "Roboto MonoVariable", monospace;
     background-color: black;
     color: white;
     border: 1px solid white;

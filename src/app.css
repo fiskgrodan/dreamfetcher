@@ -16,34 +16,18 @@
   --spacing: 10px;
 }
 
-body,
-button {
-  font-family: "InterVariable", sans-serif;
-}
-
-input {
-  font-family: "Roboto MonoVariable", monospace;
-}
-
-textarea {
-  font-family: "Roboto MonoVariable", monospace;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color: white;
-  background-color: black;
-
-  border: none;
-  outline: none;
-  resize: none;
-}
-
 body {
   margin: 0;
   min-width: 100vw;
   min-height: 100vh;
   overscroll-behavior: none;
+  overflow-x: hidden;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
 
 ::selection {

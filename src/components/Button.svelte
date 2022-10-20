@@ -6,6 +6,7 @@
 
 <style>
   button {
+    font-family: "InterVariable", sans-serif;
     background-color: black;
     color: white;
     outline: none;

@@ -18,15 +18,9 @@
     >
     <Tab active={current === "jwt"} on:click={() => (current = "jwt")}>jwt</Tab>
   </div>
-  {#if current === "headers"}
-    <Textarea store={headers} />
-  {/if}
-  {#if current === "body"}
-    <Textarea store={body} />
-  {/if}
-  {#if current === "jwt"}
-    <Textarea store={jwt} />
-  {/if}
+  {#if current === "headers"}<Textarea store={headers} />{/if}
+  {#if current === "body"}<Textarea store={body} />{/if}
+  {#if current === "jwt"}<Textarea store={jwt} />{/if}
 </section>
 
 <style>
