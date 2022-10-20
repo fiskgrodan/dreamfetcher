@@ -1,4 +1,4 @@
-import { writable, get } from "svelte/store";
+import { writable, derived, get } from "svelte/store";
 import { response, data } from "./response";
 
 export const endpoint = writable("https://www.boredapi.com/api/activity");
@@ -14,17 +14,22 @@ export const body = writable(`{
   
 }`);
 
-export const jwt = writable(``);
+export const jwt = writable("");
 
-const getBody = () => (["GET"].includes(get(method)) ? undefined : get(body));
+const combinedHeaders = derived([headers, jwt], ([headers, jwt]) => {
+  const combined = JSON.parse(headers);
+  if (jwt !== "") {
+    combined["Authorization"] = `Bearer ${jwt}`;
+  }
+  return combined;
+});
 
 export const send = async () => {
   const fetchResponse = await fetch(get(endpoint), {
     method: get(method),
-    headers: JSON.parse(get(headers)),
-    body: getBody(),
+    headers: get(combinedHeaders),
+    body: ["GET"].includes(get(method)) ? undefined : get(body),
   });
-
   const json = await fetchResponse.json();
 
   response.set(fetchResponse);
